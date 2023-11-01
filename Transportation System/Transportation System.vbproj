@@ -74,7 +74,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -135,10 +135,10 @@
       <DependentUpon>mainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -166,24 +166,6 @@
     <None Include="Transportation System_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\shuttle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\parking-car.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\bus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\maintenance.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\for-rent.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -196,41 +178,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\booking.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\bed.png" />
-    <None Include="resources\tool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\new-user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\available.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\occupied.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\booked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\vacant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\front-desk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\history.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\refresh.png" />
+    <Content Include="resources\available.png" />
+    <Content Include="resources\bed.png" />
+    <Content Include="resources\booked.png" />
+    <Content Include="resources\booking.png" />
+    <Content Include="resources\bus.png" />
+    <Content Include="resources\CheckOutHistory.png" />
+    <Content Include="resources\delete.png" />
+    <Content Include="resources\exit.png" />
+    <Content Include="resources\for-rent.png" />
+    <Content Include="resources\front-desk.png" />
+    <Content Include="resources\green.png" />
+    <Content Include="resources\history.png" />
+    <None Include="resources\Image1.bmp" />
+    <Content Include="resources\key.png" />
+    <Content Include="resources\left.png" />
+    <Content Include="resources\lime.png" />
+    <Content Include="resources\lock.png" />
+    <Content Include="resources\maintenance.png" />
+    <Content Include="resources\new-user.png" />
+    <Content Include="resources\Occu.png" />
+    <Content Include="resources\occupied.png" />
+    <Content Include="resources\orange.png" />
+    <Content Include="resources\parking-car.png" />
+    <Content Include="resources\red.png" />
+    <Content Include="resources\refresh.png" />
+    <Content Include="resources\shuttle.png" />
+    <Content Include="resources\tool.png" />
+    <Content Include="resources\vacant.png" />
     <Content Include="RoomDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

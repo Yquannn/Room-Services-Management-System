@@ -1,12 +1,10 @@
 ﻿Imports System.Data.SqlClient
-
-
 Public Class mainForm
     Dim Con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kathlene\OneDrive\Documents\RoomDb.mdf;Integrated Security=True;Connect Timeout=30")
     Dim adp As SqlDataAdapter
 
     Public Sub populate()
-        'Con.Open()
+        Con.Open()
         Dim sql As String = "SELECT Id, LastName, FirstName, ContactNo, RoomNo, CheckIn, CheckOut, NumberOfGuess,isOccupied FROM roomInfo"
         Dim cmd As New SqlCommand(sql, Con)
         Dim adapter As New SqlDataAdapter(cmd)
@@ -283,11 +281,6 @@ Public Class mainForm
 
 
 
-
-
-
-
-
     Public Sub ClearBtn()
         Fname.Text = ""
         Lname.Text = ""
@@ -360,7 +353,6 @@ Public Class mainForm
             Dim myId As Guid = Guid.NewGuid()
             Dim myIdString = myId.ToString().Substring(0, 6)
             ShuttleId.Text = myIdString
-
         End If
         Try
             If String.IsNullOrWhiteSpace(Lname.Text) OrElse
@@ -395,8 +387,9 @@ Public Class mainForm
                             cmd.ExecuteNonQuery()
                         End Using
 
-                        MsgBox("Added successfully!")
-                        Con.Close()
+                    MsgBox("Added successfully!")
+
+                    Con.Close()
                         populate()
                         fetchIfOccupied()
                         ClearBtn()
@@ -406,7 +399,7 @@ Public Class mainForm
 
         Catch ex As Exception
             Con.Close()
-            MsgBox("An error occurred: " & ex.Message)
+            MsgBox("This Guess is already Check in")
         End Try
 
     End Sub
@@ -684,4 +677,6 @@ Public Class mainForm
             End Using
         End Using
     End Sub
+
+
 End Class
