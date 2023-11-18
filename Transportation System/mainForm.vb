@@ -66,7 +66,6 @@ Public Class mainForm
             cmd.Parameters.AddWithValue("@Room305", isOccupied.Text)
             cmd.Parameters.AddWithValue("@Room306", isOccupied.Text)
             cmd.Parameters.AddWithValue("@RoomNumber", roomNumber2.Text)
-
             cmd.ExecuteNonQuery()
         End Using
 
@@ -77,7 +76,6 @@ Public Class mainForm
     Private Sub fetchIfOccupied()
         Con.Open()
         Dim query = "SELECT * FROM roomInfo"
-
         Dim cmd As New SqlCommand(query, Con)
         Dim dt As New DataTable
         Dim reader As SqlDataReader
@@ -85,7 +83,6 @@ Public Class mainForm
         While reader.Read
             Dim status = reader(8).ToString()
             Dim roomNumber = reader(4).ToString()
-
             Select Case roomNumber
                 Case 101
                     tbStatus1.Text = "Status: " + status
@@ -170,7 +167,6 @@ Public Class mainForm
     Private Sub fetchStatus()
         Con.Open()
         Dim query = "SELECT * FROM RoomAvailability"
-
         Dim cmd As New SqlCommand(query, Con)
         Dim dt As New DataTable
         Dim reader As SqlDataReader
@@ -194,8 +190,6 @@ Public Class mainForm
             Dim status16 = reader(16).ToString()
             Dim status17 = reader(17).ToString()
             Dim status18 = reader(18).ToString()
-
-
             Dim roomNumber = reader(19).ToString()
 
             Select Case roomNumber
@@ -374,25 +368,23 @@ Public Class mainForm
                         Dim query As String = "INSERT INTO roomInfo (Id, LastName, FirstName, ContactNo, RoomNo, CheckIn, NumberOfGuess, CheckOut, isOccupied) VALUES (@Id, @LastName, @FirstName, @ContactNo, @RoomNo, GETDATE(), @NumberOfGuess, @Checkout, @isOccupied)"
                         Dim checkOutDate As DateTime = CheckOut.Value
                         isOccupied.Text = "Occupied"
-                        Using cmd As New SqlCommand(query, Con)
-                            cmd.Parameters.AddWithValue("@Id", ShuttleId.Text)
-                            cmd.Parameters.AddWithValue("@LastName", Lname.Text.ToUpper())
-                            cmd.Parameters.AddWithValue("@FirstName", Fname.Text.ToUpper())
-                            cmd.Parameters.AddWithValue("@RoomNo", roomNumber) ' Assuming you have a plateNo field
-                            cmd.Parameters.AddWithValue("@TimeIn", timeIn.Text.ToUpper())
-                            cmd.Parameters.AddWithValue("@CheckOut", checkOutDate)
-                            cmd.Parameters.AddWithValue("@NumberOfGuess", noOfGuess.Text.ToUpper())
-                            cmd.Parameters.AddWithValue("@ContactNo", Cnumber.Text.ToUpper()) ' Corrected variable name
-                            cmd.Parameters.AddWithValue("@isOccupied", isOccupied.Text.ToUpper())
-                            cmd.ExecuteNonQuery()
-                        End Using
-
+                    Using cmd As New SqlCommand(query, Con)
+                        cmd.Parameters.AddWithValue("@Id", ShuttleId.Text)
+                        cmd.Parameters.AddWithValue("@LastName", Lname.Text.ToUpper())
+                        cmd.Parameters.AddWithValue("@FirstName", Fname.Text.ToUpper())
+                        cmd.Parameters.AddWithValue("@RoomNo", roomNumber) ' Assuming you have a plateNo field
+                        cmd.Parameters.AddWithValue("@TimeIn", timeIn.Text.ToUpper())
+                        cmd.Parameters.AddWithValue("@CheckOut", checkOutDate)
+                        cmd.Parameters.AddWithValue("@NumberOfGuess", noOfGuess.Text.ToUpper())
+                        cmd.Parameters.AddWithValue("@ContactNo", Cnumber.Text.ToUpper()) ' Corrected variable name
+                        cmd.Parameters.AddWithValue("@isOccupied", isOccupied.Text.ToUpper())
+                        cmd.ExecuteNonQuery()
+                    End Using
                     MsgBox("Added successfully!")
-
                     Con.Close()
                         populate()
-                        fetchIfOccupied()
-                        ClearBtn()
+                    fetchIfOccupied()
+                    ClearBtn()
                     End If
                 End If
 
@@ -430,7 +422,6 @@ Public Class mainForm
                     Using cmd As New SqlCommand(deleteQuery, Con)
                         cmd.Parameters.AddWithValue("@Id", ShuttleId.Text)
                         cmd.ExecuteNonQuery()
-
                     End Using
                 End Using
 
@@ -459,7 +450,7 @@ Public Class mainForm
             noOfGuess.Text = row.Cells("NumberOfGuess").Value.ToString()
             CheckOut.Text = row.Cells("CheckOut").Value.ToString()
             ShuttleId.Text = row.Cells("Id").Value.ToString()
-
+            isOccupied.Text = row.Cells("isOccupied").Value.ToString()
         End If
     End Sub
 
@@ -630,8 +621,9 @@ Public Class mainForm
                 cmd.Parameters.AddWithValue("@RoomNo", roomNumber2.Text)
                 cmd.ExecuteNonQuery()
                 Con.Close()
-                ClearBtn()
                 populateMaintenance()
+
+                ClearBtn()
             End If
         Catch ex As Exception
             MsgBox("Error Removing: " & ex.Message)

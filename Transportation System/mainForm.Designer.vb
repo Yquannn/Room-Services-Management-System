@@ -22,7 +22,6 @@ Partial Class mainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -178,10 +177,6 @@ Partial Class mainForm
         Me.Label75 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.RoomDbDataSet = New Transportation_System.RoomDbDataSet()
-        Me.HistoryInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HistoryInfoTableAdapter = New Transportation_System.RoomDbDataSetTableAdapters.historyInfoTableAdapter()
-        Me.HistoryInfoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ParkingBtn = New System.Windows.Forms.Button()
@@ -233,9 +228,6 @@ Partial Class mainForm
         Me.TabPage4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.RoomDbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HistoryInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HistoryInfoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -328,7 +320,6 @@ Partial Class mainForm
         Me.isOccupied.Name = "isOccupied"
         Me.isOccupied.Size = New System.Drawing.Size(219, 22)
         Me.isOccupied.TabIndex = 193
-        Me.isOccupied.Visible = False
         '
         'Label39
         '
@@ -1864,7 +1855,7 @@ Partial Class mainForm
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label75)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(68, 171)
+        Me.Panel1.Location = New System.Drawing.Point(69, 171)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1052, 22)
         Me.Panel1.TabIndex = 150
@@ -1928,25 +1919,6 @@ Partial Class mainForm
         Me.Label12.Size = New System.Drawing.Size(582, 45)
         Me.Label12.TabIndex = 151
         Me.Label12.Text = "Room Service Management System"
-        '
-        'RoomDbDataSet
-        '
-        Me.RoomDbDataSet.DataSetName = "RoomDbDataSet"
-        Me.RoomDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'HistoryInfoBindingSource
-        '
-        Me.HistoryInfoBindingSource.DataMember = "historyInfo"
-        Me.HistoryInfoBindingSource.DataSource = Me.RoomDbDataSet
-        '
-        'HistoryInfoTableAdapter
-        '
-        Me.HistoryInfoTableAdapter.ClearBeforeFill = True
-        '
-        'HistoryInfoBindingSource1
-        '
-        Me.HistoryInfoBindingSource1.DataMember = "historyInfo"
-        Me.HistoryInfoBindingSource1.DataSource = Me.RoomDbDataSet
         '
         'Button4
         '
@@ -2143,9 +2115,6 @@ Partial Class mainForm
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.RoomDbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HistoryInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HistoryInfoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2285,10 +2254,6 @@ Partial Class mainForm
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents Label32 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents RoomDbDataSet As RoomDbDataSet
-    Friend WithEvents HistoryInfoBindingSource As BindingSource
-    Friend WithEvents HistoryInfoTableAdapter As RoomDbDataSetTableAdapters.historyInfoTableAdapter
-    Friend WithEvents HistoryInfoBindingSource1 As BindingSource
     Friend WithEvents Button4 As Button
     Friend WithEvents Label22 As Label
     Friend WithEvents search As TextBox
