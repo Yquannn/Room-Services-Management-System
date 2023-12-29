@@ -177,12 +177,13 @@ Partial Class mainForm
         Me.Label75 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ParkingBtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.MaintenanceBtn = New System.Windows.Forms.Button()
         Me.ShuttleBtn = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DGVshuttle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,6 +320,7 @@ Partial Class mainForm
         Me.isOccupied.Name = "isOccupied"
         Me.isOccupied.Size = New System.Drawing.Size(219, 22)
         Me.isOccupied.TabIndex = 193
+        Me.isOccupied.Visible = False
         '
         'Label39
         '
@@ -609,7 +611,7 @@ Partial Class mainForm
         '
         'timeIn
         '
-        Me.timeIn.Location = New System.Drawing.Point(221, 177)
+        Me.timeIn.Location = New System.Drawing.Point(221, 185)
         Me.timeIn.Name = "timeIn"
         Me.timeIn.Size = New System.Drawing.Size(313, 20)
         Me.timeIn.TabIndex = 161
@@ -1849,7 +1851,7 @@ Partial Class mainForm
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(301, 144)
+        Me.Panel1.Location = New System.Drawing.Point(61, 150)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1052, 22)
         Me.Panel1.TabIndex = 150
@@ -1913,24 +1915,6 @@ Partial Class mainForm
         Me.Label15.Size = New System.Drawing.Size(108, 23)
         Me.Label15.TabIndex = 156
         Me.Label15.Text = "Booking History"
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.Transportation_System.My.Resources.Resources.refresh
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Button4.ForeColor = System.Drawing.Color.Transparent
-        Me.Button4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button4.Location = New System.Drawing.Point(1377, 12)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(45, 44)
-        Me.Button4.TabIndex = 157
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -2022,12 +2006,50 @@ Partial Class mainForm
         Me.ShuttleBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ShuttleBtn.UseVisualStyleBackColor = False
         '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.Transparent
+        Me.Button8.BackgroundImage = Global.Transportation_System.My.Resources.Resources.front_desk
+        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button8.ForeColor = System.Drawing.Color.Transparent
+        Me.Button8.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Button8.Location = New System.Drawing.Point(1164, 68)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(70, 47)
+        Me.Button8.TabIndex = 165
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button8.UseVisualStyleBackColor = False
+        Me.Button8.Visible = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = Global.Transportation_System.My.Resources.Resources.refresh
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button4.ForeColor = System.Drawing.Color.Transparent
+        Me.Button4.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Button4.Location = New System.Drawing.Point(1363, 10)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(45, 44)
+        Me.Button4.TabIndex = 166
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1496, 854)
         Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
@@ -2045,7 +2067,7 @@ Partial Class mainForm
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Transportation department"
+        Me.Text = " "
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -2251,7 +2273,6 @@ Partial Class mainForm
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents Label32 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button4 As Button
     Friend WithEvents Label22 As Label
     Friend WithEvents search As TextBox
     Friend WithEvents DataGridView2 As DataGridView
@@ -2265,4 +2286,9 @@ Partial Class mainForm
     Friend WithEvents Button7 As Button
     Friend WithEvents Label29 As Label
     Friend WithEvents searchRoom As TextBox
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button4 As Button
+End Class
+
+Class Transportation_System
 End Class
